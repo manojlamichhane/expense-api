@@ -12,6 +12,7 @@ import com.example.expensetrackerApi.entity.User;
 import com.example.expensetrackerApi.repository.UserRepository;
 
 
+
 @Service
 public class CustomUserDetailsService implements UserDetailsService{
 
