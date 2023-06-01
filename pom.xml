@@ -73,5 +73,6 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
+		<finalName>ExpenseManager</finalName>
+		</build>
 </project>

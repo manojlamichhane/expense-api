@@ -10,5 +10,5 @@ phases:
       - echo Build completed 
 artifacts:
   files:
-    - target/Expense-Manager.jar
+    - target/ExpenseManager.jar
     discard-paths: yes      
