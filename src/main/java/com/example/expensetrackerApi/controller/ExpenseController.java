@@ -22,6 +22,7 @@ import com.example.expensetrackerApi.entity.Expense;
 import jakarta.validation.Valid;
 
 @RestController
+
 public class ExpenseController {
 	
 	@Autowired
