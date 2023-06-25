@@ -15,12 +15,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table ( name="tbl_users") 
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
 	@Id

@@ -13,7 +13,12 @@ import com.example.expensetrackerApi.exception.ItemAlreadyExistsException;
 import com.example.expensetrackerApi.exception.ResourceNotFoundException;
 import com.example.expensetrackerApi.repository.UserRepository;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @Service
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserServiceImpl implements UserService{
 
 	@Autowired
@@ -26,6 +31,7 @@ public class UserServiceImpl implements UserService{
 		}
 		User newUser = new User();
 		BeanUtils.copyProperties(user, newUser);
+//		copying usermodel data to user so that we can ignore the password while saving in database 
 		return userRepository.save(newUser);
 	}
 
