@@ -1,5 +1,8 @@
 package com.example.expensetrackerApi.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -57,13 +60,18 @@ public class AuthController {
 	
 	@PostMapping("/login")
 	@ResponseStatus(value = HttpStatus.OK)
-	public String login(@RequestBody AuthModel authModel ) throws Exception {
-
+	public Object login(@RequestBody AuthModel authModel ) throws Exception {
+		
+		Map<String, String> object = new HashMap<>();
+		
 		authentication(authModel.getEmail(),authModel.getPassword());
 		
 		UserDetails userdetails = userDetailsService.loadUserByUsername(authModel.getEmail());
+		 
+		object.put("token",jwtUtil.generateToken(userdetails));
 		
-		return jwtUtil.generateToken(userdetails);
+		return 	object;
+		
 		
 		//	SecurityContextHolder.getContext().setAuthentication(authentication);	
 	}
